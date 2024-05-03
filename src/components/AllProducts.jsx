@@ -1,9 +1,26 @@
+/*
+
 const AllProducts = ({ products })=> {
     return (
-        <ul id='products'>
+        <li id='products'>
+            { products.map( product => {
+                return (
+                    <li key={ product.id }>
+                        <p> { product.title } </p>
+                        <button onClick={ ()=> {
 
-        </ul>
+                        }}>-</button>
+                        <button onClick={ ()=> {
+                            
+                        }}>+</button>
+                    </li>
+                )
+            } ) }
+        </li>
     )
 }
 
 export default AllProducts;
+
+*/
+
