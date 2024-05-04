@@ -1,3 +1,5 @@
+/*
+
 import React, { useState, useEffect } from 'react';
 
 function ProductList() {
@@ -32,3 +34,6 @@ function ProductList() {
 }
 
 export default ProductList;
+
+*/
+

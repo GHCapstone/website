@@ -1,32 +1,35 @@
 import React, { useState } from 'react';
 
-const Login = () => {
+const Signup = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch('https://fakestoreapi.com/auth/login',{
-            method:'POST',
-            body:JSON.stringify({
-                username: "mor_2314",
-                password: "83r5^_"
-            })
-        })
-            .then(res=>res.json())
-            .then(json=>console.log(json));
+    
+    console.log({ username, email, password });
 
-    console.log({ email, password });
-
+    setUsername('');
     setEmail('');
     setPassword('');
   };
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -47,10 +50,10 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
